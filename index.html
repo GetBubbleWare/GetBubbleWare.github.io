@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .key {
+            font-size: 1.2em;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Key Generator</h1>
+        <div id="keys"></div>
+        <button onclick="generateKeys()">Generate Keys</button>
+    </div>
+    <script>
+        function generateRandomKey(length) {
+            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let key = "";
+            for (let i = 0; i < length; i++) {
+                const randIndex = Math.floor(Math.random() * chars.length);
+                key += chars[randIndex];
+            }
+            return key;
+        }
+
+        function generateKeys() {
+            const numberOfKeys = 6;
+            const keyLength = 20;
+            const keysContainer = document.getElementById("keys");
+            keysContainer.innerHTML = "";
+
+            for (let i = 0; i < numberOfKeys; i++) {
+                const randomKey = generateRandomKey(keyLength);
+                const keyElement = document.createElement("div");
+                keyElement.className = "key";
+                keyElement.textContent = randomKey;
+                keysContainer.appendChild(keyElement);
+            }
+        }
+    </script>
+</body>
+</html>
