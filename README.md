@@ -4,11 +4,11 @@ This project generates random keys consisting of numbers and letters. It include
 
 ## Files
 
-- `index.html`: The main HTML file with the UI and JavaScript code.
+- `8392648826488267402753749736368496kdunrusbfkey-info/index.html`: The HTML file for the key generator.
 - `README.md`: This file.
 
 ## Usage
 
-1. Open `index.html` in a web browser.
+1. Navigate to `/8392648826488267402753749736368496kdunrusbfkey-info` on the deployed site.
 2. Click the "Generate Key" button to generate a random key.
 3. Click the "Copy Key" button to copy the generated key to the clipboard.
